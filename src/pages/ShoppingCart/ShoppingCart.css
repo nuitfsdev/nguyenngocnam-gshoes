@@ -1,0 +1,28 @@
+.shopping-cart{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  max-width: 760px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 800px)
+{
+.shopping-cart{
+    height: auto;
+    flex-direction: column;
+    margin-top: 20px;
+}
+}
+
+@media only screen and (max-width: 480px)
+{
+.shopping-cart {
+    padding: 0 8px;
+}
+}
