@@ -1,25 +1,36 @@
 import Product from "./Components/Product/Product";
 import { useState, useEffect } from "react";
-import listItem from "./Components/Product/shoes";
+// import listItem from "./Components/Product/shoes";
 import Cart from "./Components/Cart/Cart";
 import './ShoppingCart.css';
-
+import axios from 'axios';
 function ShoppingCart()
 {
     const [listCartItem, setListCartItem] = useState([]);
+    const [listItem, setListItem] = useState([]);
 
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://gshoesbe.onrender.com/api/product');
+      setListItem(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
     useEffect(() => {
+        fetchData();
         const savedData = localStorage.getItem('cartData');
         if (savedData) {
             setListCartItem(JSON.parse(savedData));
         }
       }, []);
     
-
     const addToCart = (product) => {
         setListCartItem([...listCartItem, {product, quantity: 1}]);
         localStorage.setItem('cartData', JSON.stringify([...listCartItem, {product, quantity: 1}]));
     }
+
     const deleteFromCart = (item) => {
         const index = listCartItem.findIndex((cartItem) => cartItem.product.id === item.product.id);
         if (index > -1) {
@@ -29,6 +40,7 @@ function ShoppingCart()
            
         }
     }
+
     const updateFromCart = (item) => {
         const index = listCartItem.findIndex((cartItem) => cartItem.product.id === item.product.id);
         if (index > -1) {
@@ -37,6 +49,7 @@ function ShoppingCart()
             localStorage.setItem('cartData', JSON.stringify([...listCartItem]));
         }
     }
+
     const checkExistProductInCart = (product) => {
         const index = listCartItem.findIndex((cartItem) => cartItem.product.id === product.id);
         if (index > -1) {
@@ -44,6 +57,7 @@ function ShoppingCart()
         }
         return false;
     }
+
     return (
         <div className="shopping-cart">
             <Product products={listItem} addProductToCart={addToCart} checkProductInCart={checkExistProductInCart}/>
