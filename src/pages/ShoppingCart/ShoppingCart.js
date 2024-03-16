@@ -7,19 +7,21 @@ import axios from 'axios';
 function ShoppingCart()
 {
     const [listCartItem, setListCartItem] = useState([]);
-    const [listItem, setListItem] = useState([]);
+   const [listItem, setListItem] = useState([]);
 
 
   const fetchData = async () => {
     try {
+        console.log('fetching data');
       const response = await axios.get('https://gshoesbe.onrender.com/api/product');
       setListItem(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
-    useEffect(() => {
+    useEffect( () => {
         fetchData();
+        console.log('fetching data from api');
         const savedData = localStorage.getItem('cartData');
         if (savedData) {
             setListCartItem(JSON.parse(savedData));
@@ -32,7 +34,7 @@ function ShoppingCart()
     }
 
     const deleteFromCart = (item) => {
-        const index = listCartItem.findIndex((cartItem) => cartItem.product.id === item.product.id);
+        const index = listCartItem.findIndex((cartItem) => cartItem.product._id === item.product._id);
         if (index > -1) {
             listCartItem.splice(index, 1);
             setListCartItem([...listCartItem]);
@@ -42,7 +44,7 @@ function ShoppingCart()
     }
 
     const updateFromCart = (item) => {
-        const index = listCartItem.findIndex((cartItem) => cartItem.product.id === item.product.id);
+        const index = listCartItem.findIndex((cartItem) => cartItem.product._id === item.product._id);
         if (index > -1) {
             listCartItem[index].quantity = item.quantity;
             setListCartItem([...listCartItem]);
@@ -51,7 +53,7 @@ function ShoppingCart()
     }
 
     const checkExistProductInCart = (product) => {
-        const index = listCartItem.findIndex((cartItem) => cartItem.product.id === product.id);
+        const index = listCartItem.findIndex((cartItem) => cartItem.product._id === product._id);
         if (index > -1) {
             return true;
         }
