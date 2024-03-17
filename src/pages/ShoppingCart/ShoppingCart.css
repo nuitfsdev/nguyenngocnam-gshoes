@@ -1,4 +1,4 @@
-.shopping-cart{
+.shopping-cart {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -11,18 +11,16 @@
   gap: 10px;
 }
 
-@media only screen and (max-width: 800px)
-{
-.shopping-cart{
+@media only screen and (max-width: 800px) {
+  .shopping-cart {
     height: auto;
     flex-direction: column;
     margin-top: 20px;
-}
+  }
 }
 
-@media only screen and (max-width: 480px)
-{
-.shopping-cart {
+@media only screen and (max-width: 480px) {
+  .shopping-cart {
     padding: 0 8px;
-}
+  }
 }

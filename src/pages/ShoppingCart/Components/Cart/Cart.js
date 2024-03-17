@@ -6,6 +6,7 @@ function Cart(props) {
     const deleteItem = (item) => {
         props.deleteProductFromCart(item);
     }
+
     const minusItem = (item) => {
         if(item.quantity === 1) 
         {
@@ -17,10 +18,12 @@ function Cart(props) {
             props.updateProductFromCart(item);
         }
     }
+
     const plusItem = (item) => {
         item.quantity = item.quantity + 1;
         props.updateProductFromCart(item);
     }
+
     return (
         <div className="cart card">
             <div className="card-logo">
@@ -41,7 +44,7 @@ function Cart(props) {
                 {props.items?.length === 0 ? <div className="cart-empty">Your cart is empty</div> :
                     props.items?.map((item, index) => {
 
-                        return <div className="cart-item " key={index}>
+                        return  <div className={`cart-item`} key={index}>
                             <div className="cart-itemLeft">
                                 <div className="cart-itemImage" style={{ backgroundColor: item.product.color }}>
                                     <div className="cart-itemImageBlock">
@@ -62,13 +65,12 @@ function Cart(props) {
                                             +
                                         </div>
                                     </div>
-                                    <div className="cart-itemRemove" onClick={() => deleteItem(item)}>
+                                    <div className="cart-itemRemove" onClick={(e) => deleteItem(item)}>
                                         <img src={images.trash} alt="remove" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     })
                 }
             </div>

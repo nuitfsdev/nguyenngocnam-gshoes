@@ -1,63 +1,72 @@
-.cart-total{
+.cart-total {
     display: flex;
     float: right;
 }
-.cart-item{
+
+.cart-item {
     display: flex;
     padding: 20px 0;
 }
-.shrink {
-    animation: shrink 0.5s ease forwards; 
+
+.cart-item.shrink {
+    animation: shrink 0.5s ease forwards;
 }
-.cart-itemLeft{
+
+.cart-itemLeft {
     flex: 0;
     animation: zoom-in .5s ease;
     transform-origin: center center;
 }
-.cart-itemImage{
+
+.cart-itemImage {
     width: 90px;
     height: 90px;
     border-radius: 100%;
     background-color: #eee;
     margin-right: 34px;
 }
-.cart-itemImage img{
+
+.cart-itemImage img {
     display: block;
     width: 140%;
     transform: rotate(-28deg) translateY(-40px);
     filter: drop-shadow(0 30px 20px rgba(0, 0, 0, .2));
 }
 
-.cart-itemRight{
+.cart-itemRight {
     flex: 1;
 }
-.cart-itemName{
+
+.cart-itemName {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 10px;
     animation: fly-in .5s ease;
 }
-.cart-itemPrice{
+
+.cart-itemPrice {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
     animation: fly-in .5s ease;
 }
-.cart-itemAction{
+
+.cart-itemAction {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     animation: fly-in .5s ease;
 }
 
-.cart-itemCount{
+.cart-itemCount {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.cart-itemCountButton{
+
+.cart-itemCountButton {
     cursor: pointer;
     width: 28px;
     height: 28px;
@@ -73,14 +82,14 @@
     user-select: none;
 }
 
-.cart-itemCountNumber{
+.cart-itemCountNumber {
     font-size: 14px;
     margin: 0 8px;
     width: 20px;
     text-align: center;
 }
 
-.cart-itemRemove{
+.cart-itemRemove {
     width: 28px;
     height: 28px;
     cursor: pointer;
@@ -94,38 +103,44 @@
     user-select: none;
 }
 
-.cart-itemRemove img{
+.cart-itemRemove img {
     width: 16px;
     height: 16px;
 }
-.cart-empty{
+
+.cart-empty {
     font-size: 14px;
 }
+
 @keyframes zoom-in {
     from {
-      transform: scale(0.5); 
+        transform: scale(0.5);
     }
+
     to {
-      transform: scale(1);
+        transform: scale(1);
     }
 }
+
 @keyframes fly-in {
     from {
-      transform: translateX(100%); 
-      opacity: 0; 
+        transform: translateX(100%);
+        opacity: 0;
     }
+
     to {
-      transform: translateX(0); 
-      opacity: 1; 
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes shrink {
     from {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     to {
-      transform: scale(0); 
-      opacity: 0;
+        transform: scale(0);
+        opacity: 0;
     }
 }

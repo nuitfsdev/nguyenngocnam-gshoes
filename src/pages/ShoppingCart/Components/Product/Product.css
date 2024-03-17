@@ -1,16 +1,17 @@
-.card{
+.card {
     background-color: #fff;
     box-sizing: border-box;
     width: 360px;
     height: 600px;
-    box-shadow: 0 3.2px 2.2px rgba(0,0,0,.02), 0 7px 5.4px rgba(0,0,0,.028), 0 12.1px 10.1px rgba(0,0,0,.035), 0 19.8px 18.1px rgba(0,0,0,.042), 0 34.7px 33.8px rgba(0,0,0,.05), 0 81px 81px rgba(0,0,0,.07);
+    box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, .02), 0 7px 5.4px rgba(0, 0, 0, .028), 0 12.1px 10.1px rgba(0, 0, 0, .035), 0 19.8px 18.1px rgba(0, 0, 0, .042), 0 34.7px 33.8px rgba(0, 0, 0, .05), 0 81px 81px rgba(0, 0, 0, .07);
     border-radius: 30px;
     overflow: hidden;
     padding: 0 28px;
     position: relative;
     margin-bottom: 20px;
 }
-.card::before{
+
+.card::before {
     content: "";
     display: block;
     position: absolute;
@@ -23,61 +24,66 @@
     z-index: 0;
 }
 
-.card-logo img{
+.card-logo img {
     width: 50px;
     position: relative;
     margin: 12px 0;
 }
 
-.card-tittle{
+.card-tittle {
     font-size: 24px;
     font-weight: 700;
     margin: 4px 0 16px 0;
     position: relative;
 }
-.card-listItem{
+
+.card-listItem {
     height: calc(100% - 98px);
     position: relative;
     overflow-y: scroll;
     scrollbar-width: none
 }
 
-.item{
+.item {
     padding: 40px 0;
 }
-.item-image{
+
+.item-image {
     border-radius: 30px;
     height: 380px;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
-.item-image img{
+
+.item-image img {
     display: block;
     width: 100%;
     filter: drop-shadow(0 30px 20px rgba(0, 0, 0, .2));
     transform: rotate(-24deg);
     margin-left: -16px;
 }
-.item-name{
+
+.item-name {
     font-size: 20px;
     font-weight: 700;
     margin: 26px 0 20px;
     line-height: 1.5;
 }
 
-.item-description{
+.item-description {
     font-size: 13px;
     color: #777;
     line-height: 1.8;
     margin-bottom: 20px;
 }
-.item-price{
+
+.item-price {
     font-size: 18px;
     font-weight: 700;
 }
 
-.item-button{
+.item-button {
     cursor: pointer;
     background-color: #f6c90e;
     font-weight: 700;
@@ -96,8 +102,8 @@
     align-items: center;
     overflow: hidden;
 }
-.item-check
-{
+
+.item-check {
     display: flex;
     height: 46px;
     width: 46px;
@@ -106,17 +112,18 @@
     align-items: center;
     justify-content: center;
 }
-.item-check img{
+
+.item-check img {
     width: 16px;
     height: 16px;
 }
 
-.item-bottom{
+.item-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card-listItem .item:first-child{
-   padding: 0 0 40px 0;
+.card-listItem .item:first-child {
+    padding: 0 0 40px 0;
 }

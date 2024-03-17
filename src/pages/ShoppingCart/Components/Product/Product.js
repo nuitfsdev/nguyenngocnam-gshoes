@@ -6,9 +6,11 @@ function Product(props) {
     const handleClickAddToCart = (product) => {
         props.addProductToCart(product);
     }
+
     const checkExistItemInCart = (product) => {
-       return props.checkProductInCart(product);
+        return props.checkProductInCart(product);
     }
+
     return (
         <div className="product card">
             <div className="card-logo">
@@ -26,18 +28,17 @@ function Product(props) {
                             <div className="item-description">{item.description}</div>
                             <div className="item-bottom">
                                 <div className="item-price">${item.price}</div>
-                                { checkExistItemInCart(item) === false ?
+                                {checkExistItemInCart(item) === false ?
 
-                                <div className="item-button" onClick={() => handleClickAddToCart(item)}>
-                                    <p>ADD TO CART</p>
-                                </div> :
-                                <div className="item-check">
-                                    <img src={images.check} alt="check" />
-                                </div>
+                                    <div className="item-button" onClick={() => handleClickAddToCart(item)}>
+                                        <p>ADD TO CART</p>
+                                    </div> :
+                                    <div className="item-check">
+                                        <img src={images.check} alt="check" />
+                                    </div>
                                 }
                             </div>
                         </div>
-
                     })
                 }
             </div>
